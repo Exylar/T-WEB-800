@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Spinner */
+.spinner {
+  border-right-color: transparent!important;
+  border-radius: 50%;
+
+  animation-name: spin;
+  animation-duration: 850ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.gradient-plan {
+  background: rgb(116,66,12);
+  background: linear-gradient(90deg, rgba(116,66,12,1) 0%, rgba(47,207,222,1) 94%);
+}
+
+/* Customize the label (the container) */
+.checkbox_container {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #444;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox_label {
+  position: relative;
+  top: -2px
+}
+
+/* Hide the browser's default checkbox */
+.checkbox_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkbox_checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.checkbox_container input:checked ~ .checkbox_checkmark {
+  background-color: #524eca;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox_checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox_container input:checked ~ .checkbox_checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox_container .checkbox_checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
