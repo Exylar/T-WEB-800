@@ -18,7 +18,7 @@ const ExpenseCategory = (props) => {
       <FontAwesomeIcon icon={icon} />
       {title}
     </div>
-  )
+  ) 
 }
 
 export default ExpenseCategory;
